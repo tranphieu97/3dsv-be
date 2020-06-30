@@ -1,10 +1,10 @@
 /**
  * Required External Modules
  */
-import * as dotenv from "dotenv";
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
+import * as dotenv from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
 
 dotenv.config();
 
@@ -43,7 +43,7 @@ interface WebpackHotModule {
     data: any;
     accept(
       dependencies: string[],
-      callback?: (updatedDependencies: ModuleId[]) => void,
+      callback?: (updatedDependencies: ModuleId[]) => void
     ): void;
     accept(dependency: string, callback?: () => void): void;
     accept(errHandler?: (err: Error) => void): void;
