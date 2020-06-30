@@ -13,6 +13,7 @@ import cookieSession from 'cookie-session';
 import './db/db';
 import authRoute from './routes/auth';
 import itemRoute from './routes/item';
+import meRoute from './routes/me';
 
 /**
  * App Variables
@@ -42,6 +43,7 @@ app.use(passport.session());
 
 app.use(authRoute);
 app.use(itemRoute);
+app.use(meRoute);
 
 /**
  * Server Activation
