@@ -2,11 +2,17 @@
  * Required External Modules
  */
 import * as dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import passport from 'passport';
+import cookieSession from 'cookie-session';
 
-dotenv.config();
+import './db/db';
+import authRoute from './routes/auth';
+import itemRoute from './routes/item';
 
 /**
  * App Variables
@@ -22,9 +28,20 @@ const app = express();
 /**
  *  App Configuration
  */
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [process.env.COOKIE_KEY || ''],
+  })
+);
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(authRoute);
+app.use(itemRoute);
 
 /**
  * Server Activation
