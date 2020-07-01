@@ -20,9 +20,4 @@ router.get(
   }
 );
 
-router.get('/api/logout', (req, res) => {
-  req.logOut();
-  res.send(req.user);
-});
-
 export default router;
