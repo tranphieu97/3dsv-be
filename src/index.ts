@@ -11,9 +11,9 @@ import passport from 'passport';
 import cookieSession from 'cookie-session';
 
 import './db/db';
-import authRoute from './routes/auth';
-import itemRoute from './routes/item';
-import meRoute from './routes/me';
+import authRoute from './routes/auth.route';
+import itemRoute from './routes/item.route';
+import meRoute from './routes/me.route';
 
 /**
  * App Variables
