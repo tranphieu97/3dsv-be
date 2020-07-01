@@ -36,6 +36,7 @@ passport.use(
           email,
           photo,
           name: displayName,
+          isAdmin: false,
         }).save();
         done(undefined, newUser);
       }
